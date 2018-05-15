@@ -12,9 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -26,90 +27,113 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
-    QVBoxLayout *verticalLayout;
-    QPushButton *pushButton;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_2;
-    QSpacerItem *verticalSpacer;
     QVBoxLayout *verticalLayout_2;
     QTabWidget *tabWidget;
-    QWidget *tab;
-    QWidget *tab_2;
-    QWidget *tab_3;
+    QWidget *homeTab;
+    QWidget *editTab;
+    QWidget *addTab;
+    QVBoxLayout *verticalLayout_3;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label;
+    QLineEdit *lineEdit;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_2;
+    QSpinBox *spinBox;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *label_3;
+    QSpinBox *spinBox_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(400, 300);
-        MainWindow->setStyleSheet(QLatin1String("QPushButton\n"
-"{\n"
-"	color: white;\n"
-"	background-color: #27a9e3;\n"
-"	border-width: 0px;\n"
-"	border-radius: 3px;\n"
-"}\n"
-"\n"
-"QPushButton:hover\n"
-"{\n"
-"	color: white;\n"
-"	background-color: #66c011;\n"
-"	border-width: 0px;\n"
-"	border-radius: 3px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed\n"
-"{\n"
-"	color: white;\n"
-"	background-color: yellow;\n"
-"	border-width: 0px;\n"
-"	border-radius: 3px;\n"
-"}"));
+        MainWindow->setStyleSheet(QStringLiteral("background-color: white;"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayout = new QHBoxLayout(centralWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(6);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        verticalLayout->addWidget(pushButton);
-
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-
-        verticalLayout->addWidget(pushButton_3);
-
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-
-        verticalLayout->addWidget(pushButton_2);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer);
-
-
-        horizontalLayout->addLayout(verticalLayout);
-
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        tabWidget->addTab(tab, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName(QStringLiteral("tab_2"));
-        tabWidget->addTab(tab_2, QString());
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QStringLiteral("tab_3"));
-        tabWidget->addTab(tab_3, QString());
+        homeTab = new QWidget();
+        homeTab->setObjectName(QStringLiteral("homeTab"));
+        tabWidget->addTab(homeTab, QString());
+        editTab = new QWidget();
+        editTab->setObjectName(QStringLiteral("editTab"));
+        tabWidget->addTab(editTab, QString());
+        addTab = new QWidget();
+        addTab->setObjectName(QStringLiteral("addTab"));
+        verticalLayout_3 = new QVBoxLayout(addTab);
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(-1, -1, 40, -1);
+        label = new QLabel(addTab);
+        label->setObjectName(QStringLiteral("label"));
+        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_2->addWidget(label);
+
+        lineEdit = new QLineEdit(addTab);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
+        lineEdit->setSizePolicy(sizePolicy);
+        lineEdit->setMaximumSize(QSize(300, 16777215));
+
+        horizontalLayout_2->addWidget(lineEdit);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_2);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(-1, -1, 40, -1);
+        label_2 = new QLabel(addTab);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setLayoutDirection(Qt::LeftToRight);
+        label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_3->addWidget(label_2);
+
+        spinBox = new QSpinBox(addTab);
+        spinBox->setObjectName(QStringLiteral("spinBox"));
+
+        horizontalLayout_3->addWidget(spinBox);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(-1, -1, 40, -1);
+        label_3 = new QLabel(addTab);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_4->addWidget(label_3);
+
+        spinBox_2 = new QSpinBox(addTab);
+        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
+
+        horizontalLayout_4->addWidget(spinBox_2);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_4);
+
+        tabWidget->addTab(addTab, QString());
 
         verticalLayout_2->addWidget(tabWidget);
 
@@ -120,7 +144,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -129,12 +153,12 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_3->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Tab 1", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Tab 2", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Page", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(homeTab), QApplication::translate("MainWindow", "Home", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(editTab), QApplication::translate("MainWindow", "Edit Current Course", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Course Name:", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Gradeing Schemes:", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Categories:", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(addTab), QApplication::translate("MainWindow", "Add New Course", nullptr));
     } // retranslateUi
 
 };
