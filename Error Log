@@ -1,0 +1,4 @@
+5e7d5b9198e4f4e7a6e1aeb75d93233de68cc5f1
+* Tried to match button color to tab and update buttons style
+* Matching didn't work
+* Style: error message "member access into incomplete type 'QStyle'"
