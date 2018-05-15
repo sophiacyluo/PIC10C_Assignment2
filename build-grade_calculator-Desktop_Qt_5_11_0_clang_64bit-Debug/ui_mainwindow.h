@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTabWidget>
@@ -27,14 +28,15 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
+    QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
-    QVBoxLayout *verticalLayout_2;
     QTabWidget *tabWidget;
     QWidget *homeTab;
     QWidget *editTab;
     QWidget *addTab;
     QVBoxLayout *verticalLayout_3;
+    QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label;
     QLineEdit *lineEdit;
@@ -45,13 +47,15 @@ public:
     QLabel *label_3;
     QSpinBox *spinBox_2;
     QSpacerItem *verticalSpacer;
+    QPushButton *confirmButton;
     QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *verticalSpacer_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 193);
+        MainWindow->resize(409, 278);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -60,17 +64,18 @@ public:
         MainWindow->setStyleSheet(QStringLiteral("background-color: white;"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayout = new QHBoxLayout(centralWidget);
+        verticalLayout_4 = new QVBoxLayout(centralWidget);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, 0, -1, -1);
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         homeTab = new QWidget();
@@ -85,6 +90,10 @@ public:
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_3->addItem(verticalSpacer_3);
+
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
@@ -153,16 +162,25 @@ public:
 
         verticalLayout_3->addItem(verticalSpacer);
 
+        confirmButton = new QPushButton(addTab);
+        confirmButton->setObjectName(QStringLiteral("confirmButton"));
+
+        verticalLayout_3->addWidget(confirmButton);
+
         tabWidget->addTab(addTab, QString());
 
-        verticalLayout_2->addWidget(tabWidget);
-
-
-        horizontalLayout->addLayout(verticalLayout_2);
+        horizontalLayout->addWidget(tabWidget);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_2);
+
+
+        verticalLayout_4->addLayout(horizontalLayout);
+
+        verticalSpacer_2 = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer_2);
 
         MainWindow->setCentralWidget(centralWidget);
 
@@ -182,6 +200,7 @@ public:
         label->setText(QApplication::translate("MainWindow", "Course Name:", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Gradeing Schemes:", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Categories:", nullptr));
+        confirmButton->setText(QApplication::translate("MainWindow", "Add Course", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(addTab), QApplication::translate("MainWindow", "Add New Course", nullptr));
     } // retranslateUi
 
