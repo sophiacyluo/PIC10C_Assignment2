@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-05-15T09:51:24
+# Project created by QtCreator 2018-06-04T15:42:14
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = grade_calculator
+TARGET = QLineEdit
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
