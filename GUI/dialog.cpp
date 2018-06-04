@@ -18,5 +18,6 @@ Dialog::~Dialog()
 
 void Dialog::on_pushButton_clicked()
 {
-    QMessageBox::information(this, "Title here", "Hellow World");
+    // ui->lineEdit->setText("hello world");
+    QMessageBox::information(this, "Title", ui->lineEdit->text());
 }

@@ -12,6 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -19,16 +21,30 @@ QT_BEGIN_NAMESPACE
 class Ui_Dialog
 {
 public:
+    QHBoxLayout *horizontalLayout;
+    QLineEdit *lineEdit;
     QPushButton *pushButton;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QStringLiteral("Dialog"));
-        Dialog->resize(400, 300);
+        Dialog->resize(290, 83);
+        horizontalLayout = new QHBoxLayout(Dialog);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        lineEdit = new QLineEdit(Dialog);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setEchoMode(QLineEdit::Password);
+
+        horizontalLayout->addWidget(lineEdit);
+
         pushButton = new QPushButton(Dialog);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(130, 140, 113, 32));
+
+        horizontalLayout->addWidget(pushButton);
+
 
         retranslateUi(Dialog);
 
