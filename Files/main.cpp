@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    QString mFilename = "/Users/sophialuo/Desktop/myfile.txt";
+    QString mFilename = "myfile.txt";
 
     Write(mFilename);
     Read(mFilename);
