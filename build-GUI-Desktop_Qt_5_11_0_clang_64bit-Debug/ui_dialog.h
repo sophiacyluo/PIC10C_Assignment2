@@ -12,23 +12,23 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Dialog
 {
 public:
-    QLabel *label;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QStringLiteral("Dialog"));
         Dialog->resize(400, 300);
-        label = new QLabel(Dialog);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(110, 100, 121, 41));
+        pushButton = new QPushButton(Dialog);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(130, 140, 113, 32));
 
         retranslateUi(Dialog);
 
@@ -38,7 +38,7 @@ public:
     void retranslateUi(QDialog *Dialog)
     {
         Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", nullptr));
-        label->setText(QApplication::translate("Dialog", "lol", nullptr));
+        pushButton->setText(QApplication::translate("Dialog", "Click me", nullptr));
     } // retranslateUi
 
 };
