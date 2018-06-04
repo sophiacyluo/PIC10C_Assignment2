@@ -6,6 +6,7 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    // ui->label->setText("<b>Hello</b> everyone");
 }
 
 Dialog::~Dialog()
