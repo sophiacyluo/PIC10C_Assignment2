@@ -39,7 +39,7 @@ public:
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label;
-    QLineEdit *lineEdit;
+    QLineEdit *course_name;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_2;
     QSpinBox *spinBox;
@@ -105,16 +105,16 @@ public:
 
         horizontalLayout_2->addWidget(label);
 
-        lineEdit = new QLineEdit(addTab);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        course_name = new QLineEdit(addTab);
+        course_name->setObjectName(QStringLiteral("course_name"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy1);
-        lineEdit->setMaximumSize(QSize(300, 16777215));
+        sizePolicy1.setHeightForWidth(course_name->sizePolicy().hasHeightForWidth());
+        course_name->setSizePolicy(sizePolicy1);
+        course_name->setMaximumSize(QSize(300, 16777215));
 
-        horizontalLayout_2->addWidget(lineEdit);
+        horizontalLayout_2->addWidget(course_name);
 
 
         verticalLayout_3->addLayout(horizontalLayout_2);
