@@ -6,7 +6,14 @@
 #include <QDebug>
 #include <QTextStream>
 
-void Write(QString Filename, QString data)
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+}
+
+void Write(QString Filename)
 {
     QFile mFile(Filename);
 
@@ -17,7 +24,7 @@ void Write(QString Filename, QString data)
     }
 
     QTextStream out(&mFile);
-    out << data;
+    out << "It worked!";
 
     mFile.flush();
     mFile.close();
@@ -41,18 +48,10 @@ void Read(QString Filename)
     mFile.close();
 }
 
-void MainWindow::on_course_name_textChanged(const QString &arg1)
+void MainWindow::on_confirmButton_clicked()
 {
-    QString filename = "myfile.txt";
-
-    Write(filename, arg1);
-}
-
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
+    QString filename = ui->course_name->text();
+    Write(filename);
 }
 
 MainWindow::~MainWindow()

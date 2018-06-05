@@ -18,6 +18,8 @@ public:
 private slots:
     void on_course_name_textChanged(const QString &arg1);
 
+    void on_confirmButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
