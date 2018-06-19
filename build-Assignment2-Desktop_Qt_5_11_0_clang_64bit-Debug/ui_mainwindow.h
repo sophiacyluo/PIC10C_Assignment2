@@ -62,6 +62,17 @@ public:
     QPushButton *pushButton;
     QWidget *tab_2;
     QPushButton *pushButton_2;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *verticalLayout_4;
+    QHBoxLayout *horizontalLayout_13;
+    QLabel *label_9;
+    QLineEdit *lineEdit_9;
+    QHBoxLayout *horizontalLayout_14;
+    QLabel *label_10;
+    QLineEdit *lineEdit_10;
+    QHBoxLayout *horizontalLayout_15;
+    QLabel *label_11;
+    QLineEdit *lineEdit_11;
     QWidget *tab_3;
 
     void setupUi(QMainWindow *MainWindow)
@@ -248,6 +259,62 @@ public:
         pushButton_2 = new QPushButton(tab_2);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(160, 300, 113, 32));
+        verticalLayoutWidget_3 = new QWidget(tab_2);
+        verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
+        verticalLayoutWidget_3->setGeometry(QRect(120, 40, 191, 209));
+        verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_3);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setSpacing(6);
+        horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
+        label_9 = new QLabel(verticalLayoutWidget_3);
+        label_9->setObjectName(QStringLiteral("label_9"));
+
+        horizontalLayout_13->addWidget(label_9);
+
+        lineEdit_9 = new QLineEdit(verticalLayoutWidget_3);
+        lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
+
+        horizontalLayout_13->addWidget(lineEdit_9);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_13);
+
+        horizontalLayout_14 = new QHBoxLayout();
+        horizontalLayout_14->setSpacing(6);
+        horizontalLayout_14->setObjectName(QStringLiteral("horizontalLayout_14"));
+        label_10 = new QLabel(verticalLayoutWidget_3);
+        label_10->setObjectName(QStringLiteral("label_10"));
+
+        horizontalLayout_14->addWidget(label_10);
+
+        lineEdit_10 = new QLineEdit(verticalLayoutWidget_3);
+        lineEdit_10->setObjectName(QStringLiteral("lineEdit_10"));
+
+        horizontalLayout_14->addWidget(lineEdit_10);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_14);
+
+        horizontalLayout_15 = new QHBoxLayout();
+        horizontalLayout_15->setSpacing(6);
+        horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
+        label_11 = new QLabel(verticalLayoutWidget_3);
+        label_11->setObjectName(QStringLiteral("label_11"));
+
+        horizontalLayout_15->addWidget(label_11);
+
+        lineEdit_11 = new QLineEdit(verticalLayoutWidget_3);
+        lineEdit_11->setObjectName(QStringLiteral("lineEdit_11"));
+
+        horizontalLayout_15->addWidget(lineEdit_11);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_15);
+
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
@@ -284,6 +351,9 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "Next", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Homework", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "Next", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "Midterm 1:", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "Midterm 2:", nullptr));
+        label_11->setText(QApplication::translate("MainWindow", "Final exam:", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Exams", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Calculate", nullptr));
     } // retranslateUi
