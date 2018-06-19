@@ -8,15 +8,17 @@ class Category
 {
 public:
     Category();
-    Category(string new_name);
+    Category(string new_name, double new_weight);
     
     void add_item(double new_item);
     double calculate();
+    double get_weight() const;
     
 private:
     string name;
     vector<double> items;
     double result;
+    double weight;
 };
 
 Category::Category()
@@ -24,13 +26,15 @@ Category::Category()
     name = "";
     items = vector<double>(0);
     result = 0;
+    weight = 0;
 }
 
-Category::Category(string new_name)
+Category::Category(string new_name, double new_weight)
 {
     name = new_name;
     items = vector<double>(0);
     result = 0;
+    weight = new_weight;
 }
 
 void Category::add_item(double new_item)
@@ -55,6 +59,11 @@ double Category::calculate()
         result = sum / items.size();
     
     return result;
+}
+
+double Category::get_weight() const
+{
+    return weight;
 }
 
 class Scheme
@@ -93,19 +102,10 @@ void Scheme::add_category(Category new_category)
 
 double Scheme::final_grade()
 {
-    double sum = 0;
-    
     for(int i = 0; i < categories.size(); ++i)
     {
-        sum = sum + categories[i].calculate();
+        grade = grade + (categories[i].calculate() * categories[i].get_weight());
     }
-    
-    if(categories.size() == 1)
-    {
-        grade = sum;
-    }
-    else
-        grade = sum / categories.size();
     
     return grade;
 }
@@ -124,11 +124,16 @@ int main()
         string name;
         getline(cin, name);
         
-        Category c(name);
+        cout << "How many percentage of the total grade is this category worth? ";
+        double temp;
+        cin >> temp;
+        temp = temp / 100;
+        
+        Category c(name, temp);
         
         while(true)
         {
-            cout << "Please enter grade in percentage: ";
+            cout << "Please enter " << name << " grade in percentage: ";
             double grade;
             cin >> grade;
             c.add_item(grade);
