@@ -59,9 +59,9 @@ public:
     QLabel *label_8;
     QLineEdit *lineEdit_8;
     QTextBrowser *textBrowser;
-    QPushButton *pushButton;
+    QPushButton *next1;
     QWidget *tab_2;
-    QPushButton *pushButton_2;
+    QPushButton *next2;
     QWidget *verticalLayoutWidget_3;
     QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout_13;
@@ -263,18 +263,18 @@ public:
         textBrowser->setSizePolicy(sizePolicy);
         textBrowser->setAutoFillBackground(false);
         textBrowser->setStyleSheet(QStringLiteral(""));
-        pushButton = new QPushButton(tab);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(160, 300, 113, 32));
+        next1 = new QPushButton(tab);
+        next1->setObjectName(QStringLiteral("next1"));
+        next1->setGeometry(QRect(160, 300, 113, 32));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
-        pushButton_2 = new QPushButton(tab_2);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(160, 300, 113, 32));
+        next2 = new QPushButton(tab_2);
+        next2->setObjectName(QStringLiteral("next2"));
+        next2->setGeometry(QRect(160, 300, 113, 32));
         verticalLayoutWidget_3 = new QWidget(tab_2);
         verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(120, 60, 191, 209));
+        verticalLayoutWidget_3->setGeometry(QRect(120, 70, 191, 209));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -340,10 +340,10 @@ public:
         tab_3->setObjectName(QStringLiteral("tab_3"));
         pushButton_3 = new QPushButton(tab_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(70, 30, 301, 32));
+        pushButton_3->setGeometry(QRect(70, 20, 301, 32));
         verticalLayoutWidget_4 = new QWidget(tab_3);
         verticalLayoutWidget_4->setObjectName(QStringLiteral("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(120, 80, 191, 209));
+        verticalLayoutWidget_4->setGeometry(QRect(120, 70, 191, 209));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
@@ -405,7 +405,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -427,9 +427,9 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Instructions: Please enter your grade for each homework in percentages. If there were only seven homeworks assigned, please enter &quot;N/A&quot; for Homework 8.</p></body></html>", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Next", nullptr));
+        next1->setText(QApplication::translate("MainWindow", "Next", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Homework", nullptr));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Next", nullptr));
+        next2->setText(QApplication::translate("MainWindow", "Next", nullptr));
         label_9->setText(QApplication::translate("MainWindow", "Midterm 1:", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "Midterm 2:", nullptr));
         label_11->setText(QApplication::translate("MainWindow", "Final exam:", nullptr));

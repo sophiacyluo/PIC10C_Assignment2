@@ -12,3 +12,13 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_next1_clicked()
+{
+    ui->tabWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_next2_clicked()
+{
+    ui->tabWidget->setCurrentIndex(2);
+}
