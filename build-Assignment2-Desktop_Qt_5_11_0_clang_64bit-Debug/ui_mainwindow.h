@@ -73,7 +73,20 @@ public:
     QHBoxLayout *horizontalLayout_15;
     QLabel *label_11;
     QLineEdit *lineEdit_11;
+    QTextBrowser *textBrowser_2;
     QWidget *tab_3;
+    QPushButton *pushButton_3;
+    QWidget *verticalLayoutWidget_4;
+    QVBoxLayout *verticalLayout_5;
+    QHBoxLayout *horizontalLayout_16;
+    QLabel *label_12;
+    QLineEdit *lineEdit_12;
+    QHBoxLayout *horizontalLayout_17;
+    QLabel *label_13;
+    QLineEdit *lineEdit_13;
+    QHBoxLayout *horizontalLayout_18;
+    QLabel *label_14;
+    QLineEdit *lineEdit_14;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -261,7 +274,7 @@ public:
         pushButton_2->setGeometry(QRect(160, 300, 113, 32));
         verticalLayoutWidget_3 = new QWidget(tab_2);
         verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(120, 40, 191, 209));
+        verticalLayoutWidget_3->setGeometry(QRect(120, 60, 191, 209));
         verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_3);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -315,9 +328,75 @@ public:
 
         verticalLayout_4->addLayout(horizontalLayout_15);
 
+        textBrowser_2 = new QTextBrowser(tab_2);
+        textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
+        textBrowser_2->setGeometry(QRect(30, 20, 371, 31));
+        sizePolicy.setHeightForWidth(textBrowser_2->sizePolicy().hasHeightForWidth());
+        textBrowser_2->setSizePolicy(sizePolicy);
+        textBrowser_2->setAutoFillBackground(false);
+        textBrowser_2->setStyleSheet(QStringLiteral(""));
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
+        pushButton_3 = new QPushButton(tab_3);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(70, 30, 301, 32));
+        verticalLayoutWidget_4 = new QWidget(tab_3);
+        verticalLayoutWidget_4->setObjectName(QStringLiteral("verticalLayoutWidget_4"));
+        verticalLayoutWidget_4->setGeometry(QRect(120, 80, 191, 209));
+        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_4);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_16 = new QHBoxLayout();
+        horizontalLayout_16->setSpacing(6);
+        horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
+        label_12 = new QLabel(verticalLayoutWidget_4);
+        label_12->setObjectName(QStringLiteral("label_12"));
+
+        horizontalLayout_16->addWidget(label_12);
+
+        lineEdit_12 = new QLineEdit(verticalLayoutWidget_4);
+        lineEdit_12->setObjectName(QStringLiteral("lineEdit_12"));
+
+        horizontalLayout_16->addWidget(lineEdit_12);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_16);
+
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setSpacing(6);
+        horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
+        label_13 = new QLabel(verticalLayoutWidget_4);
+        label_13->setObjectName(QStringLiteral("label_13"));
+
+        horizontalLayout_17->addWidget(label_13);
+
+        lineEdit_13 = new QLineEdit(verticalLayoutWidget_4);
+        lineEdit_13->setObjectName(QStringLiteral("lineEdit_13"));
+
+        horizontalLayout_17->addWidget(lineEdit_13);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_17);
+
+        horizontalLayout_18 = new QHBoxLayout();
+        horizontalLayout_18->setSpacing(6);
+        horizontalLayout_18->setObjectName(QStringLiteral("horizontalLayout_18"));
+        label_14 = new QLabel(verticalLayoutWidget_4);
+        label_14->setObjectName(QStringLiteral("label_14"));
+
+        horizontalLayout_18->addWidget(label_14);
+
+        lineEdit_14 = new QLineEdit(verticalLayoutWidget_4);
+        lineEdit_14->setObjectName(QStringLiteral("lineEdit_14"));
+
+        horizontalLayout_18->addWidget(lineEdit_14);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_18);
+
         tabWidget->addTab(tab_3, QString());
 
         verticalLayout_3->addWidget(tabWidget);
@@ -354,7 +433,16 @@ public:
         label_9->setText(QApplication::translate("MainWindow", "Midterm 1:", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "Midterm 2:", nullptr));
         label_11->setText(QApplication::translate("MainWindow", "Final exam:", nullptr));
+        textBrowser_2->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">  Instructions: You know what to do! You're smart! Right?...</p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Exams", nullptr));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Click HERE to reveal your fate!", nullptr));
+        label_12->setText(QApplication::translate("MainWindow", "Scheme 1:", nullptr));
+        label_13->setText(QApplication::translate("MainWindow", "Scheme 2:", nullptr));
+        label_14->setText(QApplication::translate("MainWindow", "Final grade:", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Calculate", nullptr));
     } // retranslateUi
 
