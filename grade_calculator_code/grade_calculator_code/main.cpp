@@ -16,18 +16,21 @@ public:
 private:
     string name;
     vector<double> items;
+    double result;
 };
 
 Category::Category()
 {
     name = "";
     items = vector<double>(0);
+    result = 0;
 }
 
 Category::Category(string new_name)
 {
     name = new_name;
     items = vector<double>(0);
+    result = 0;
 }
 
 void Category::add_item(double new_item)
@@ -38,7 +41,6 @@ void Category::add_item(double new_item)
 double Category::calculate()
 {
     double sum = 0;
-    double result = 0;
     
     for(int i = 0; i < items.size(); ++i)
     {
@@ -49,8 +51,8 @@ double Category::calculate()
     {
         result = sum;
     }
-    
-    result = sum / items.size();
+    else
+        result = sum / items.size();
     
     return result;
 }
@@ -67,18 +69,21 @@ public:
 private:
     string name;
     vector<Category> categories;
+    double grade;
 };
 
 Scheme::Scheme()
 {
     name = "";
     categories = vector<Category>(0);
+    grade = 0;
 }
 
 Scheme::Scheme(string new_name)
 {
     name = new_name;
     categories = vector<Category>(0);
+    grade = 0;
 }
 
 void Scheme::add_category(Category new_category)
@@ -89,7 +94,6 @@ void Scheme::add_category(Category new_category)
 double Scheme::final_grade()
 {
     double sum = 0;
-    double result = 0;
     
     for(int i = 0; i < categories.size(); ++i)
     {
@@ -98,12 +102,12 @@ double Scheme::final_grade()
     
     if(categories.size() == 1)
     {
-        result = sum;
+        grade = sum;
     }
+    else
+        grade = sum / categories.size();
     
-    result = sum / categories.size() - 1;
-    
-    return result;
+    return grade;
 }
 
 int main()
@@ -122,8 +126,6 @@ int main()
         
         Category c(name);
         
-        s.add_category(c);
-        
         while(true)
         {
             cout << "Please enter grade in percentage: ";
@@ -131,13 +133,13 @@ int main()
             cin >> grade;
             c.add_item(grade);
             
-            cout << "Add item? (Y/N): ";
+            cout << "Add item? (y/n): ";
             char answer;
             cin >> answer;
             string remainder;
             getline(cin, remainder);
             
-            if(answer == 'N')
+            if(answer == 'n')
             {
                 break;
             }
@@ -145,13 +147,15 @@ int main()
         
         cout << "The average grade of this category is: " << c.calculate() << endl;
         
-        cout << "Add another category? (Y/N): ";
+        s.add_category(c);
+        
+        cout << "Add another category? (y/n): ";
         char answer;
         cin >> answer;
         string remainder;
         getline(cin, remainder);
         
-        if(answer == 'N')
+        if(answer == 'n')
         {
             break;
         }
