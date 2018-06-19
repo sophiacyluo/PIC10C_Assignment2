@@ -73,7 +73,7 @@ public:
     Scheme(string new_name);
     
     void add_category(Category new_category);
-    double final_grade();
+    double scheme_grade();
     
 private:
     string name;
@@ -100,7 +100,7 @@ void Scheme::add_category(Category new_category)
     categories.push_back(new_category);
 }
 
-double Scheme::final_grade()
+double Scheme::scheme_grade()
 {
     for(int i = 0; i < categories.size(); ++i)
     {
@@ -110,35 +110,107 @@ double Scheme::final_grade()
     return grade;
 }
 
+class Course
+{
+public:
+    Course();
+    Course(string new_name);
+    
+    void add_scheme(Scheme new_scheme);
+    double final_grade();
+    
+private:
+    string name;
+    vector<Scheme> schemes;
+    double total;
+};
+
+Course::Course()
+{
+    name = "";
+    total = 0;
+}
+
+Course::Course(string new_name)
+{
+    name = "";
+    total = 0;
+}
+
+void Course::add_scheme(Scheme new_scheme)
+{
+    schemes.push_back(new_scheme);
+}
+
+double Course::final_grade()
+{
+    if(schemes.size() == 1)
+        total = schemes[0].scheme_grade();
+    else
+    {
+        for(int i = 0; i < schemes.size(); ++i)
+        {
+            if(schemes[i].scheme_grade() > total)
+                total = schemes[i].scheme_grade();
+        }
+    }
+    
+    return total;
+}
+
 int main()
 {
-    cout << "Please name your grading scheme: ";
-    string scheme;
-    getline(cin, scheme);
+    cout << "Please name your course: ";
+    string course_name;
+    getline(cin, course_name);
     
-    Scheme s(scheme);
+    Course course(course_name);
     
     while(true)
     {
-        cout << "Please enter category name: ";
-        string name;
-        getline(cin, name);
+        cout << "Please name your grading scheme: ";
+        string scheme;
+        getline(cin, scheme);
         
-        cout << "How many percentage of the total grade is this category worth? ";
-        double temp;
-        cin >> temp;
-        temp = temp / 100;
-        
-        Category c(name, temp);
+        Scheme s(scheme);
         
         while(true)
         {
-            cout << "Please enter " << name << " grade in percentage: ";
-            double grade;
-            cin >> grade;
-            c.add_item(grade);
+            cout << "Please enter category name: ";
+            string name;
+            getline(cin, name);
             
-            cout << "Add item? (y/n): ";
+            cout << "How many percentage of the total grade is this category worth? ";
+            double temp;
+            cin >> temp;
+            temp = temp / 100;
+            
+            Category c(name, temp);
+            
+            while(true)
+            {
+                cout << "Please enter " << name << " grade in percentage: ";
+                double grade;
+                cin >> grade;
+                c.add_item(grade);
+                
+                cout << "Add item? (y/n): ";
+                char answer;
+                cin >> answer;
+                string remainder;
+                getline(cin, remainder);
+                
+                if(answer == 'n')
+                {
+                    break;
+                }
+            }
+            
+            cout << "The average grade of this category is: " << c.calculate() << endl;
+            
+            s.add_category(c);
+            
+            cout << "Add another category? (y/n): ";
             char answer;
             cin >> answer;
             string remainder;
@@ -150,15 +222,15 @@ int main()
             }
         }
         
-        cout << "The average grade of this category is: " << c.calculate() << endl;
+        cout << "With this grading scheme, your grade is: " << s.scheme_grade() << endl;
+        cout << "Would you like to add another grading scheme? (y/n): ";
         
-        s.add_category(c);
-        
-        cout << "Add another category? (y/n): ";
         char answer;
         cin >> answer;
         string remainder;
         getline(cin, remainder);
+        
+        course.add_scheme(s);
         
         if(answer == 'n')
         {
@@ -166,7 +238,7 @@ int main()
         }
     }
     
-    cout << "Your final grade is: " << s.final_grade() << endl;
+    cout << "Your final grade is " << course.final_grade() << endl;
     
     return 0;
 }
