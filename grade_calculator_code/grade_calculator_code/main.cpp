@@ -73,7 +73,8 @@ public:
     Scheme(string new_name);
     
     void add_category(Category new_category);
-    double scheme_grade();
+    void scheme_grade();
+    double get_grade() const;
     
 private:
     string name;
@@ -100,13 +101,16 @@ void Scheme::add_category(Category new_category)
     categories.push_back(new_category);
 }
 
-double Scheme::scheme_grade()
+void Scheme::scheme_grade()
 {
     for(int i = 0; i < categories.size(); ++i)
     {
         grade = grade + (categories[i].calculate() * categories[i].get_weight());
     }
-    
+}
+
+double Scheme::get_grade() const
+{
     return grade;
 }
 
@@ -145,13 +149,13 @@ void Course::add_scheme(Scheme new_scheme)
 double Course::final_grade()
 {
     if(schemes.size() == 1)
-        total = schemes[0].scheme_grade();
+        total = schemes[0].get_grade();
     else
     {
         for(int i = 0; i < schemes.size(); ++i)
         {
-            if(schemes[i].scheme_grade() > total)
-                total = schemes[i].scheme_grade();
+            if(schemes[i].get_grade() > total)
+                total = schemes[i].get_grade();
         }
     }
     
@@ -222,7 +226,9 @@ int main()
             }
         }
         
-        cout << "With this grading scheme, your grade is: " << s.scheme_grade() << endl;
+        s.scheme_grade();
+        
+        cout << "With this grading scheme, your grade is: " << s.get_grade() << endl;
         cout << "Would you like to add another grading scheme? (y/n): ";
         
         char answer;
