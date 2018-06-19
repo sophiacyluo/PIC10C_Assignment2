@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "grade.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,15 +16,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_confirmButton_clicked()
 {
-
-}
-
-void MainWindow::on_course_name_textEdited(const QString &arg1)
-{
-    QString course_name = arg1;
-}
-
-void MainWindow::on_spinBox_valueChanged(int arg1)
-{
-    int schemes = arg1;
+    Course course(ui->course_name->text());
+    Scheme s(ui->course_name->text() + '1');
 }
