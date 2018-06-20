@@ -34,7 +34,7 @@ public:
     QHBoxLayout *horizontalLayout_12;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_4;
-    QLabel *label;
+    QLabel *label_1;
     QLineEdit *lineEdit;
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_2;
@@ -118,10 +118,10 @@ public:
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        label = new QLabel(horizontalLayoutWidget_9);
-        label->setObjectName(QStringLiteral("label"));
+        label_1 = new QLabel(horizontalLayoutWidget_9);
+        label_1->setObjectName(QStringLiteral("label_1"));
 
-        horizontalLayout_4->addWidget(label);
+        horizontalLayout_4->addWidget(label_1);
 
         lineEdit = new QLineEdit(horizontalLayoutWidget_9);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
@@ -414,7 +414,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "PIC 10B Grade Calculator", nullptr));
-        label->setText(QApplication::translate("MainWindow", "Homework 1:", nullptr));
+        label_1->setText(QApplication::translate("MainWindow", "Homework 1:", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Homework 2:", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Homework 3:", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "Homework 4:", nullptr));
