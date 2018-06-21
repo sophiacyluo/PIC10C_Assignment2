@@ -35,7 +35,7 @@ public:
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_1;
-    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_1;
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_2;
     QLineEdit *lineEdit_2;
@@ -123,10 +123,10 @@ public:
 
         horizontalLayout_4->addWidget(label_1);
 
-        lineEdit = new QLineEdit(horizontalLayoutWidget_9);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit_1 = new QLineEdit(horizontalLayoutWidget_9);
+        lineEdit_1->setObjectName(QStringLiteral("lineEdit_1"));
 
-        horizontalLayout_4->addWidget(lineEdit);
+        horizontalLayout_4->addWidget(lineEdit_1);
 
 
         verticalLayout_2->addLayout(horizontalLayout_4);
@@ -405,7 +405,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
