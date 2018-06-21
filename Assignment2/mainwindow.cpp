@@ -55,7 +55,7 @@ void MainWindow::on_pushButton_3_clicked()
         sum = sum + homeworks[i];
     }
 
-    double homework_grade = (sum / (homeworks.size() - 1)) * 0.25;
+    double homework_grade = (sum / (static_cast<double>(homeworks.size()) - 1)) * 0.25;
 
     double midterm1 = ui->lineEdit_9->text().toDouble();
     double midterm2 = ui->lineEdit_10->text().toDouble();
